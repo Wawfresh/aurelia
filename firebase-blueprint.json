@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Shipment": {
+      "title": "Shipment Consignment",
+      "description": "Represents a high-value courier consignment record in Aurelia Sovereign telemetry system.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique waybill identifier (e.g. AUR-8829-X)" },
+        "awbNumber": { "type": "string", "description": "10-digit AWB tracking code" },
+        "sender": { "type": "string", "description": "Shipper name and origin facility" },
+        "recipient": { "type": "string", "description": "Consignee name and destination" },
+        "origin": { "type": "string", "description": "Origin city and hub node" },
+        "destination": { "type": "string", "description": "Destination city and hub node" },
+        "currentLocation": { "type": "string", "description": "Current active location or transit hub" },
+        "status": { "type": "string", "description": "Status (Order Placed, In Transit, Paused, Resumed, Out for Delivery, Delivered)" },
+        "progressPercentage": { "type": "number", "description": "Progress percentage 0-100" },
+        "speed": { "type": "string", "description": "Telemetry transit speed" },
+        "eta": { "type": "string", "description": "Estimated time of arrival" },
+        "courier": { "type": "string", "description": "Assigned courier specialist or escort unit" },
+        "cargo": { "type": "string", "description": "Declared cargo description" },
+        "weight": { "type": "string", "description": "Package weight" },
+        "pieces": { "type": "number", "description": "Number of pieces/crates" },
+        "serviceLevel": { "type": "string", "description": "Service tier level" }
+      },
+      "required": ["id", "status"]
+    }
+  },
+  "firestore": {
+    "/shipments/{shipmentId}": {
+      "schema": "Shipment",
+      "description": "Global collection of active and delivered consignments."
+    }
+  }
+}

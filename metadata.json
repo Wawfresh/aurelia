@@ -1,0 +1,6 @@
+{
+  "name": "AURELIA | Ultra-Luxury Logistics & Courier Command",
+  "description": "Bespoke global logistics platform featuring real-time package tracking, interactive vector route telemetry, active shipment state control, and live WebSocket synchronisation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
